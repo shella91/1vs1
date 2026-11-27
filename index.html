@@ -1,0 +1,1408 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game LCT Ketangkasan - SMP Islam Miftahul Ulum</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    @keyframes popIn {
+      0% { transform: scale(0.95); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .animate-pop {
+      animation: popIn 0.25s ease-out forwards;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-emerald-50 via-slate-50 to-amber-50 min-h-screen text-slate-800 flex flex-col">
+
+  <!-- HEADER -->
+  <header class="bg-emerald-950 text-white shadow-lg border-b border-emerald-800 sticky top-0 z-20">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-amber-400 text-emerald-950 flex items-center justify-center font-black text-xl shadow-md">
+          ⚔️
+        </div>
+        <div>
+          <h1 class="font-extrabold text-sm sm:text-lg tracking-tight leading-tight">
+            DUEL LCT REBUTAN (2 PEMAIN)
+          </h1>
+          <p class="text-[11px] sm:text-xs text-emerald-300 font-medium">
+            Harlah SMP Islam Miftahul Ulum Ke-7
+          </p>
+        </div>
+      </div>
+
+      <div id="header-badge" class="hidden sm:flex items-center gap-2 bg-emerald-900/80 px-3 py-1.5 rounded-full text-xs font-semibold text-amber-300 border border-emerald-700">
+        <span>🎯 50 Soal Acak • Rebutan 2 Pemain</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="flex-1 max-w-5xl w-full mx-auto px-4 py-5 sm:py-8 flex flex-col justify-center">
+
+    <!-- ==================== SCREEN 1: START SCREEN ==================== -->
+    <section id="screen-start" class="bg-white rounded-3xl shadow-xl border border-emerald-100 p-6 sm:p-10 text-center animate-pop">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-100 text-amber-900 text-xs font-extrabold uppercase tracking-wider mb-4">
+        <span>⚔️</span> Mode Duel Rebutan Cepat Tepat
+      </div>
+
+      <h2 class="text-2xl sm:text-4xl font-extrabold text-slate-900 mb-3">
+        Adu Cepat & Tepat 2 Peserta!
+      </h2>
+      <p class="text-slate-600 max-w-2xl mx-auto mb-6 text-sm sm:text-base leading-relaxed">
+        Dua siswa bertanding dalam 1 perangkat memperebutkan <strong>50 soal acak campuran</strong> (masing-masing 10 soal dari 5 mata pelajaran kisi-kisi LCT). Siapa paling cepat menekan jawaban benar dialah pemenang poinnya!
+      </p>
+
+      <!-- Mata Pelajaran Pills -->
+      <div class="flex flex-wrap justify-center gap-2 mb-7">
+        <span class="px-3 py-1.5 rounded-xl bg-teal-50 text-teal-800 border border-teal-200 text-xs font-bold">🔬 IPAS (10 Soal)</span>
+        <span class="px-3 py-1.5 rounded-xl bg-blue-50 text-blue-800 border border-blue-200 text-xs font-bold">📚 B. Indonesia (10 Soal)</span>
+        <span class="px-3 py-1.5 rounded-xl bg-indigo-50 text-indigo-800 border border-indigo-200 text-xs font-bold">📐 Matematika (10 Soal)</span>
+        <span class="px-3 py-1.5 rounded-xl bg-rose-50 text-rose-800 border border-rose-200 text-xs font-bold">🦅 Pend. Pancasila (10 Soal)</span>
+        <span class="px-3 py-1.5 rounded-xl bg-amber-50 text-amber-800 border border-amber-200 text-xs font-bold">🕌 PAI (10 Soal)</span>
+      </div>
+
+      <!-- Aturan Duel -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl mx-auto mb-7 text-left">
+        <div class="bg-slate-50 border border-slate-200/80 rounded-2xl p-3.5">
+          <div class="text-lg mb-1">⚡</div>
+          <div class="font-bold text-slate-800 text-xs sm:text-sm">Rebutan Langsung</div>
+          <div class="text-xs text-slate-500 mt-0.5">Jawab benar lebih dulu raih <strong>+100 + Bonus Cepat</strong>.</div>
+        </div>
+        <div class="bg-slate-50 border border-slate-200/80 rounded-2xl p-3.5">
+          <div class="text-lg mb-1">🛡️</div>
+          <div class="font-bold text-slate-800 text-xs sm:text-sm">Kesempatan Lemparan</div>
+          <div class="text-xs text-slate-500 mt-0.5">Jika 1 pemain salah (<strong>-25 poin</strong>), lawan otomatis mendapat kesempatan merebut soal!</div>
+        </div>
+        <div class="bg-slate-50 border border-slate-200/80 rounded-2xl p-3.5">
+          <div class="text-lg mb-1">⌨️ / 📱</div>
+          <div class="font-bold text-slate-800 text-xs sm:text-sm">Layar Sentuh & Keyboard</div>
+          <div class="text-xs text-slate-500 mt-0.5">P1 (Kiri / Tombol <strong>1-4</strong>) vs P2 (Kanan / Tombol <strong>7-0</strong>).</div>
+        </div>
+      </div>
+
+      <!-- Form Nama 2 Pemain & Tombol Mulai -->
+      <div class="max-w-2xl mx-auto space-y-5">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
+          <div class="bg-blue-50/70 border border-blue-200 p-4 rounded-2xl">
+            <label for="p1-name" class="block text-xs font-extrabold text-blue-800 uppercase tracking-wider mb-1.5">
+              🔵 Nama Pemain 1 (Panel Kiri)
+            </label>
+            <input id="p1-name" type="text" placeholder="Contoh: Ahmad (7A)"
+              class="w-full px-3.5 py-2.5 rounded-xl border border-blue-300 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm font-semibold bg-white" />
+          </div>
+
+          <div class="bg-rose-50/70 border border-rose-200 p-4 rounded-2xl">
+            <label for="p2-name" class="block text-xs font-extrabold text-rose-800 uppercase tracking-wider mb-1.5">
+              🔴 Nama Pemain 2 (Panel Kanan)
+            </label>
+            <input id="p2-name" type="text" placeholder="Contoh: Fatimah (7B)"
+              class="w-full px-3.5 py-2.5 rounded-xl border border-rose-300 focus:outline-none focus:ring-2 focus:ring-rose-500 text-sm font-semibold bg-white" />
+          </div>
+        </div>
+
+        <button onclick="startGame()"
+          class="w-full max-w-md mx-auto py-4 px-6 rounded-2xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-extrabold text-base sm:text-lg shadow-lg shadow-emerald-600/30 transition transform active:scale-[0.99] cursor-pointer flex items-center justify-center gap-2">
+          <span>⚔️</span> Mulai Duel 50 Soal Acak
+        </button>
+      </div>
+    </section>
+
+    <!-- ==================== SCREEN 2: DUEL GAMEPLAY ==================== -->
+    <section id="screen-game" class="hidden bg-white rounded-3xl shadow-xl border border-emerald-100 overflow-hidden animate-pop">
+      <!-- Top Scoreboard Duel Bar -->
+      <div class="bg-slate-900 text-white px-4 sm:px-6 py-3.5 grid grid-cols-3 items-center gap-2">
+        <!-- Player 1 Live Score -->
+        <div class="flex items-center gap-2.5 bg-blue-950/90 border border-blue-700/70 px-3 py-2 rounded-2xl">
+          <div class="w-8 h-8 rounded-xl bg-blue-500 text-white font-black text-xs flex items-center justify-center shrink-0">P1</div>
+          <div class="min-w-0">
+            <div id="hud-p1-name" class="text-[11px] sm:text-xs font-bold text-blue-200 truncate">Pemain 1</div>
+            <div id="hud-p1-score" class="text-base sm:text-xl font-black text-white leading-tight">0</div>
+          </div>
+        </div>
+
+        <!-- Center Round & Timer -->
+        <div class="text-center flex flex-col items-center justify-center">
+          <span id="question-counter" class="bg-amber-400 text-slate-950 font-extrabold px-2.5 py-0.5 rounded-md text-[11px] sm:text-xs mb-1">
+            Soal 1 / 50
+          </span>
+          <div class="flex items-center gap-1.5">
+            <span class="text-xs sm:text-sm">⏱️</span>
+            <span id="timer-text" class="font-black text-base sm:text-xl text-emerald-400 tabular-nums">20d</span>
+          </div>
+        </div>
+
+        <!-- Player 2 Live Score -->
+        <div class="flex items-center justify-end gap-2.5 bg-rose-950/90 border border-rose-700/70 px-3 py-2 rounded-2xl text-right">
+          <div class="min-w-0">
+            <div id="hud-p2-name" class="text-[11px] sm:text-xs font-bold text-rose-200 truncate">Pemain 2</div>
+            <div id="hud-p2-score" class="text-base sm:text-xl font-black text-white leading-tight">0</div>
+          </div>
+          <div class="w-8 h-8 rounded-xl bg-rose-500 text-white font-black text-xs flex items-center justify-center shrink-0">P2</div>
+        </div>
+      </div>
+
+      <!-- Progress Bar -->
+      <div class="w-full h-2 bg-slate-200">
+        <div id="timer-bar" class="h-full bg-emerald-500 transition-all duration-1000 ease-linear" style="width: 100%"></div>
+      </div>
+
+      <!-- Question Arena -->
+      <div class="p-4 sm:p-7">
+        <!-- Subject & Topic Info -->
+        <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+          <span id="subject-badge" class="px-3 py-1 rounded-lg text-xs font-extrabold uppercase tracking-wider bg-slate-900 text-amber-300">
+            IPAS
+          </span>
+          <span id="topic-label" class="text-xs font-semibold text-emerald-800 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-lg">
+            Bidang Materi: ...
+          </span>
+        </div>
+
+        <!-- Shared Question & Options Display -->
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-4 sm:p-5 mb-5">
+          <h3 id="question-text" class="text-base sm:text-xl font-extrabold text-slate-900 leading-relaxed mb-4">
+            Memuat pertanyaan...
+          </h3>
+
+          <div id="shared-options-display" class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            <!-- Pilihan A, B, C, D ditampilkan jelas di tengah -->
+          </div>
+        </div>
+
+        <!-- Split Duel Buzzer Pads (Pemain 1 vs Pemain 2) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- PANEL PEMAIN 1 -->
+          <div id="p1-pad" class="bg-blue-50/80 border-2 border-blue-200 rounded-2xl p-4 transition">
+            <div class="flex items-center justify-between mb-3">
+              <span id="pad-p1-title" class="font-extrabold text-blue-900 text-xs sm:text-sm">🔵 PEMAIN 1</span>
+              <span id="p1-status-badge" class="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-800">
+                Siap Rebutan (Tombol 1-4)
+              </span>
+            </div>
+            <div id="p1-buttons" class="grid grid-cols-4 gap-2">
+              <!-- Tombol A, B, C, D untuk P1 -->
+            </div>
+          </div>
+
+          <!-- PANEL PEMAIN 2 -->
+          <div id="p2-pad" class="bg-rose-50/80 border-2 border-rose-200 rounded-2xl p-4 transition">
+            <div class="flex items-center justify-between mb-3">
+              <span id="pad-p2-title" class="font-extrabold text-rose-900 text-xs sm:text-sm">🔴 PEMAIN 2</span>
+              <span id="p2-status-badge" class="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-rose-100 text-rose-800">
+                Siap Rebutan (Tombol 7-0)
+              </span>
+            </div>
+            <div id="p2-buttons" class="grid grid-cols-4 gap-2">
+              <!-- Tombol A, B, C, D untuk P2 -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Instant Round Feedback Banner -->
+        <div id="feedback-banner" class="hidden mt-5 p-4 rounded-2xl border flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div class="flex items-center gap-3">
+            <span id="feedback-icon" class="text-2xl">⚡</span>
+            <div>
+              <div id="feedback-title" class="font-extrabold text-sm sm:text-base">Hasil Ronde</div>
+              <div id="feedback-desc" class="text-xs sm:text-sm opacity-90">Keterangan poin</div>
+            </div>
+          </div>
+          <button onclick="nextQuestion()"
+            class="px-5 py-2.5 rounded-xl bg-slate-900 text-white text-xs sm:text-sm font-extrabold hover:bg-slate-800 transition cursor-pointer shrink-0">
+            Soal Berikutnya ➔
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== SCREEN 3: DUEL RESULT & DIAGNOSTIC ==================== -->
+    <section id="screen-result" class="hidden bg-white rounded-3xl shadow-xl border border-emerald-100 p-6 sm:p-10 animate-pop">
+      <div class="text-center border-b border-slate-100 pb-6 mb-6">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-100 text-amber-900 text-xs font-extrabold uppercase tracking-wider mb-3">
+          <span>🏆</span> Hasil Akhir Duel Ketangkasan LCT
+        </div>
+        <h2 id="winner-headline" class="text-2xl sm:text-4xl font-black text-slate-900">
+          Pemenang Duel!
+        </h2>
+        <p id="winner-subtext" class="text-sm sm:text-base text-slate-600 mt-1 font-medium">
+          Rekapitulasi 50 Soal Campuran LCT
+        </p>
+
+        <!-- Head-to-Head Summary Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-2xl mx-auto mt-6">
+          <div class="bg-blue-50 border-2 border-blue-200 rounded-2xl p-4">
+            <div class="text-xs font-extrabold text-blue-700 uppercase">🔵 Pemain 1</div>
+            <div id="res-p1-name" class="font-extrabold text-slate-900 text-base sm:text-lg truncate">Pemain 1</div>
+            <div id="res-p1-score" class="text-3xl font-black text-blue-700 mt-1">0</div>
+            <div id="res-p1-correct" class="text-xs font-bold text-slate-600 mt-1">0 Soal Direbut Benar</div>
+          </div>
+
+          <div class="bg-rose-50 border-2 border-rose-200 rounded-2xl p-4">
+            <div class="text-xs font-extrabold text-rose-700 uppercase">🔴 Pemain 2</div>
+            <div id="res-p2-name" class="font-extrabold text-slate-900 text-base sm:text-lg truncate">Pemain 2</div>
+            <div id="res-p2-score" class="text-3xl font-black text-rose-700 mt-1">0</div>
+            <div id="res-p2-correct" class="text-xs font-bold text-slate-600 mt-1">0 Soal Direbut Benar</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Per-Subject Comparison -->
+      <div class="mb-8">
+        <h3 class="font-extrabold text-slate-800 text-base sm:text-lg mb-4 flex items-center gap-2">
+          <span>📊</span> Perbandingan Penguasaan Per Mata Pelajaran (10 Soal / Mapel)
+        </h3>
+        <div id="subject-breakdown-list" class="space-y-3">
+          <!-- Injected via JS -->
+        </div>
+      </div>
+
+      <!-- Diagnostic Tabs for Player 1 & Player 2 -->
+      <div class="mb-8">
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+          <h3 class="font-extrabold text-slate-800 text-base sm:text-lg flex items-center gap-2">
+            <span>🎯</span> Rapor Bidang Materi Dikuasai & Belum Dikuasai
+          </h3>
+          <div class="inline-flex rounded-xl bg-slate-100 p-1">
+            <button id="tab-btn-p1" onclick="switchDiagnosticTab(1)"
+              class="px-3.5 py-1.5 rounded-lg text-xs font-extrabold bg-blue-600 text-white transition cursor-pointer">
+              🔵 Rapor Pemain 1
+            </button>
+            <button id="tab-btn-p2" onclick="switchDiagnosticTab(2)"
+              class="px-3.5 py-1.5 rounded-lg text-xs font-extrabold text-slate-600 hover:text-slate-900 transition cursor-pointer">
+              🔴 Rapor Pemain 2
+            </button>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="bg-emerald-50/70 border border-emerald-200 rounded-2xl p-4">
+            <h4 class="font-extrabold text-emerald-900 text-sm mb-2.5 flex items-center gap-1.5">
+              <span>🌟</span> Bidang Materi Dikuasai
+            </h4>
+            <ul id="mastered-list" class="text-xs sm:text-sm text-emerald-800 space-y-1.5 list-disc list-inside max-h-60 overflow-y-auto pr-1">
+            </ul>
+          </div>
+          <div class="bg-rose-50/70 border border-rose-200 rounded-2xl p-4">
+            <h4 class="font-extrabold text-rose-900 text-sm mb-2.5 flex items-center gap-1.5">
+              <span>📌</span> Bidang Materi Belum Dikuasai
+            </h4>
+            <ul id="unmastered-list" class="text-xs sm:text-sm text-rose-800 space-y-1.5 list-disc list-inside max-h-60 overflow-y-auto pr-1">
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <button onclick="startGame()"
+          class="px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold text-sm sm:text-base shadow-lg shadow-emerald-600/25 transition cursor-pointer flex items-center justify-center gap-2">
+          <span>🔄</span> Duel Ulang (50 Soal Acak Baru)
+        </button>
+        <button onclick="resetToHome()"
+          class="px-6 py-3.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-sm sm:text-base transition cursor-pointer">
+          🏠 Ganti Nama Peserta
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="text-center text-xs text-slate-500 py-4 px-4">
+    Mode Duel Rebutan LCT 2 Pemain • Harlah SMP Islam Miftahul Ulum Ke-7
+  </footer>
+
+  <script>
+    // =========================================================================
+    // BANK SOAL LENGKAP BERDASARKAN KISI-KISI LCT SMP ISLAM MIFTAHUL ULUM
+    // =========================================================================
+    const QUESTION_BANK = [
+      // -------------------- 1. IPAS (17 Soal) --------------------
+      {
+        subject: "IPAS",
+        topic: "Makhluk hidup, tumbuhan, dan perkembangbiakan",
+        question: "Bagian tumbuhan yang berfungsi utama menyerap air dan unsur hara dari dalam tanah adalah...",
+        options: ["Akar", "Batang", "Daun", "Bunga"],
+        answer: 0
+      },
+      {
+        subject: "IPAS",
+        topic: "Makhluk hidup, tumbuhan, dan perkembangbiakan",
+        question: "Peristiwa jatuhnya serbuk sari ke kepala putik pada bunga disebut...",
+        options: ["Penyerbukan", "Pembuahan", "Fotosintesis", "Pencangkokan"],
+        answer: 0
+      },
+      {
+        subject: "IPAS",
+        topic: "Makhluk hidup, tumbuhan, dan perkembangbiakan",
+        question: "Dalam rantai makanan di sawah: Padi → Tikus → Ular → Elang. Organisme yang berperan sebagai produsen adalah...",
+        options: ["Padi", "Tikus", "Ular", "Elang"],
+        answer: 0
+      },
+      {
+        subject: "IPAS",
+        topic: "Makhluk hidup, tumbuhan, dan perkembangbiakan",
+        question: "Kelompok hewan berikut yang termasuk herbivor (pemakan tumbuhan) adalah...",
+        options: ["Sapi, kelinci, dan kambing", "Harimau, elang, dan singa", "Ayam, bebek, dan tikus", "Ular, katak, dan buaya"],
+        answer: 0
+      },
+      {
+        subject: "IPAS",
+        topic: "Tubuh manusia dan alat indra",
+        question: "Organ utama dalam sistem peredaran darah manusia yang bertugas memompa darah ke seluruh tubuh adalah...",
+        options: ["Jantung", "Paru-paru", "Hati", "Ginjal"],
+        answer: 0
+      },
+      {
+        subject: "IPAS",
+        topic: "Tubuh manusia dan alat indra",
+        question: "Alat indra pada manusia yang berfungsi menerima rangsangan cahaya sehingga kita dapat melihat adalah...",
+        options: ["Mata", "Telinga", "Kulit", "Hidung"],
+        answer: 0
+      },
+      {
+        subject: "IPAS",
+        topic: "Zat dan perubahan wujud",
+        question: "Wujud zat yang memiliki sifat bentuk dan volumenya selalu tetap meskipun dipindahkan ke wadah lain adalah...",
+        options: ["Zat padat", "Zat cair", "Zat gas", "Uap air"],
+        answer: 0
+      },
+      {
+        subject: "IPAS",
+        topic: "Zat dan perubahan wujud",
+        question: "Perubahan wujud benda dari air menjadi uap air karena dipanaskan disebut peristiwa...",
+        options: ["Menguap", "Mencair", "Membeku", "Menyublim"],
+        answer: 0
+      },
+      {
+        subject: "IPAS",
+        topic: "Zat dan perubahan wujud",
+        question: "Es batu yang diletakkan di ruang terbuka lama-kelamaan akan berubah menjadi air. Peristiwa ini disebut...",
+        options: ["Mencair", "Membeku", "Mengembun", "Menyublim"],
+        answer: 0
+      },
+      {
+        subject: "IPAS",
+        topic: "Gaya, magnet, bunyi, dan energi",
+        question: "Benda-benda di bawah ini yang dapat ditarik kuat oleh magnet adalah...",
+        options: ["Paku besi dan jarum baja", "Pensil kayu dan penghapus", "Kertas dan plastik", "Kaca dan karet gelang"],
+        answer: 0
+      },
+      {
+        subject: "IPAS",
+        topic: "Gaya, magnet, bunyi, dan energi",
+        question: "Perubahan bentuk energi yang terjadi saat lampu listrik di rumah dinyalakan adalah...",
+        options: ["Energi listrik menjadi energi cahaya", "Energi kimia menjadi energi gerak", "Energi listrik menjadi energi bunyi", "Energi panas menjadi energi listrik"],
+        answer: 0
+      },
+      {
+        subject: "IPAS",
+        topic: "Gaya, magnet, bunyi, dan energi",
+        question: "Sumber energi panas dan cahaya terbesar serta utama bagi kehidupan di Bumi adalah...",
+        options: ["Matahari", "Bulan", "Bintang kejora", "Minyak bumi"],
+        answer: 0
+      },
+      {
+        subject: "IPAS",
+        topic: "Gaya, magnet, bunyi, dan energi",
+        question: "Bunyi tidak dapat merambat di ruang hampa udara karena bunyi memerlukan...",
+        options: ["Medium perantara (padat, cair, atau gas)", "Cahaya matahari", "Medan magnet", "Suhu yang sangat tinggi"],
+        answer: 0
+      },
+      {
+        subject: "IPAS",
+        topic: "Bumi, lingkungan, dan sumber daya alam",
+        question: "Kegiatan penanaman kembali hutan yang telah gundul untuk mencegah banjir dan tanah longsor disebut...",
+        options: ["Reboisasi", "Terasering", "Irigasi", "Abrasi"],
+        answer: 0
+      },
+      {
+        subject: "IPAS",
+        topic: "Bumi, lingkungan, dan sumber daya alam",
+        question: "Contoh sumber daya alam yang dapat diperbarui dan tidak akan habis jika dikelola dengan bijak adalah...",
+        options: ["Air, angin, dan tumbuhan", "Minyak bumi, batu bara, dan emas", "Gas alam, besi, dan timah", "Batu bara, tembaga, dan nikel"],
+        answer: 0
+      },
+      {
+        subject: "IPAS",
+        topic: "Kegiatan ekonomi",
+        question: "Kegiatan membeli dan menggunakan barang atau jasa untuk memenuhi kebutuhan hidup sehari-hari disebut...",
+        options: ["Konsumsi", "Produksi", "Distribusi", "Investasi"],
+        answer: 0
+      },
+      {
+        subject: "IPAS",
+        topic: "Budaya dan sejarah Indonesia",
+        question: "Pertunjukan seni tradisional berupa boneka pipih terbuat dari kulit yang berasal dari Pulau Jawa adalah...",
+        options: ["Wayang kulit", "Wayang golek", "Ondel-ondel", "Reog Ponorogo"],
+        answer: 0
+      },
+
+      // -------------------- 2. BAHASA INDONESIA (16 Soal) --------------------
+      {
+        subject: "Bahasa Indonesia",
+        topic: "Teks dan pemahaman bacaan",
+        question: "Teks yang berisi langkah-langkah atau tahapan sistematis untuk melakukan atau membuat sesuatu disebut...",
+        options: ["Teks prosedur", "Teks eksplanasi", "Teks deskripsi", "Teks narasi"],
+        answer: 0
+      },
+      {
+        subject: "Bahasa Indonesia",
+        topic: "Teks dan pemahaman bacaan",
+        question: "Teks yang menjelaskan proses terjadinya suatu fenomena alam atau sosial secara ilmiah disebut...",
+        options: ["Teks eksplanasi", "Teks prosedur", "Teks laporan hasil observasi", "Teks persuasi"],
+        answer: 0
+      },
+      {
+        subject: "Bahasa Indonesia",
+        topic: "Teks dan pemahaman bacaan",
+        question: "Inti atau pokok permasalahan yang menjadi dasar pengembangan sebuah paragraf disebut...",
+        options: ["Ide pokok / gagasan utama", "Kalimat penjelas", "Kata kunci", "Latar cerita"],
+        answer: 0
+      },
+      {
+        subject: "Bahasa Indonesia",
+        topic: "Teks dan pemahaman bacaan",
+        question: "Penyajian karangan atau peristiwa panjang dalam bentuk yang singkat dan efektif tanpa mengubah urutan isi disebut...",
+        options: ["Ringkasan", "Tanggapan", "Kritik sastra", "Ulasan buku"],
+        answer: 0
+      },
+      {
+        subject: "Bahasa Indonesia",
+        topic: "Kalimat dan kebahasaan",
+        question: "Manakah penulisan kata baku yang tepat sesuai Kamus Besar Bahasa Indonesia (KBBI)?",
+        options: ["Apotek", "Apotik", "Praktek", "Nafas"],
+        answer: 0
+      },
+      {
+        subject: "Bahasa Indonesia",
+        topic: "Kalimat dan kebahasaan",
+        question: "'Tolong tutuplah pintu kelas itu rapat-rapat!' Kalimat tersebut termasuk jenis...",
+        options: ["Kalimat perintah", "Kalimat tanya", "Kalimat berita", "Kalimat larangan"],
+        answer: 0
+      },
+      {
+        subject: "Bahasa Indonesia",
+        topic: "Kalimat dan kebahasaan",
+        question: "Kalimat yang disusun sesuai kaidah kebahasaan sehingga mudah dipahami oleh pembaca atau pendengar disebut...",
+        options: ["Kalimat efektif", "Kalimat majemuk", "Kalimat pasif", "Kalimat sapaan"],
+        answer: 0
+      },
+      {
+        subject: "Bahasa Indonesia",
+        topic: "Kosakata, imbuhan, dan peribahasa",
+        question: "Sinonim atau persamaan makna dari kata 'akurat' adalah...",
+        options: ["Tepat / saksama", "Cepat / kilat", "Ragu / bimbang", "Lama / lambat"],
+        answer: 0
+      },
+      {
+        subject: "Bahasa Indonesia",
+        topic: "Kosakata, imbuhan, dan peribahasa",
+        question: "Kata dasar 'ajar' jika diberi imbuhan pe- menjadi kata benda yang bermakna orang yang belajar, bentuk yang tepat adalah...",
+        options: ["Pelajar", "Pengajar", "Pelajaran", "Diajar"],
+        answer: 0
+      },
+      {
+        subject: "Bahasa Indonesia",
+        topic: "Kosakata, imbuhan, dan peribahasa",
+        question: "Makna dari peribahasa 'Besar pasak daripada tiang' adalah...",
+        options: ["Pengeluaran lebih besar daripada pendapatan", "Pekerjaan berat terasa ringan jika bersama", "Orang yang sombong tetapi tidak berilmu", "Sesuatu yang mustahil dapat terjadi"],
+        answer: 0
+      },
+      {
+        subject: "Bahasa Indonesia",
+        topic: "Sastra",
+        question: "Jumlah baris dalam satu bait pantun lama yang benar adalah...",
+        options: ["4 baris", "2 baris", "6 baris", "8 baris"],
+        answer: 0
+      },
+      {
+        subject: "Bahasa Indonesia",
+        topic: "Sastra",
+        question: "Pesan moral atau nasihat kebaikan yang ingin disampaikan pengarang kepada pembaca melalui sebuah cerita disebut...",
+        options: ["Amanat", "Alur", "Latar", "Watak"],
+        answer: 0
+      },
+      {
+        subject: "Bahasa Indonesia",
+        topic: "Sastra",
+        question: "Persamaan bunyi pada akhir baris atau larik dalam puisi dan pantun disebut...",
+        options: ["Rima", "Bait", "Majas", "Bait sampiran"],
+        answer: 0
+      },
+      {
+        subject: "Bahasa Indonesia",
+        topic: "Tanda baca, poster, dan surat",
+        question: "Tanda baca yang digunakan untuk memisahkan unsur-unsur dalam suatu perincian lebih dari dua unsur adalah...",
+        options: ["Tanda koma (,)", "Tanda titik dua (:)", "Tanda seru (!)", "Tanda hubung (-)"],
+        answer: 0
+      },
+      {
+        subject: "Bahasa Indonesia",
+        topic: "Tanda baca, poster, dan surat",
+        question: "Salah satu ciri utama kalimat pada poster yang baik adalah...",
+        options: ["Singkat, jelas, padat, dan menarik perhatian", "Panjang, berbelit-belit, dan penuh istilah asing", "Menggunakan bahasa gaul tanpa tanda baca", "Berisi paragraf cerita yang sangat panjang"],
+        answer: 0
+      },
+      {
+        subject: "Bahasa Indonesia",
+        topic: "Tanda baca, poster, dan surat",
+        question: "Surat yang dikeluarkan oleh instansi, lembaga, atau organisasi untuk keperluan kedinasan disebut...",
+        options: ["Surat resmi", "Surat pribadi", "Surat pembaca", "Kartu pos"],
+        answer: 0
+      },
+
+      // -------------------- 3. MATEMATIKA (16 Soal) --------------------
+      {
+        subject: "Matematika",
+        topic: "Operasi hitung bilangan",
+        question: "Hasil dari 24 + 36 ÷ 6 × 3 adalah...",
+        options: ["42", "30", "18", "48"],
+        answer: 0
+      },
+      {
+        subject: "Matematika",
+        topic: "Operasi hitung bilangan",
+        question: "Hasil dari 150 - 25 × 4 + 10 adalah...",
+        options: ["60", "510", "50", "135"],
+        answer: 0
+      },
+      {
+        subject: "Matematika",
+        topic: "Bilangan, faktor, dan kelipatan",
+        question: "Di antara kelompok bilangan berikut, yang seluruhnya merupakan bilangan prima adalah...",
+        options: ["2, 3, 5, 7, 11", "1, 2, 3, 5, 7", "2, 4, 6, 8, 10", "3, 5, 7, 9, 11"],
+        answer: 0
+      },
+      {
+        subject: "Matematika",
+        topic: "Bilangan, faktor, dan kelipatan",
+        question: "Kelipatan Persekutuan Terkecil (KPK) dari bilangan 12 dan 18 adalah...",
+        options: ["36", "6", "72", "24"],
+        answer: 0
+      },
+      {
+        subject: "Matematika",
+        topic: "Bilangan, faktor, dan kelipatan",
+        question: "Faktor Persekutuan Terbesar (FPB) dari bilangan 24 dan 36 adalah...",
+        options: ["12", "6", "72", "4"],
+        answer: 0
+      },
+      {
+        subject: "Matematika",
+        topic: "Bilangan, faktor, dan kelipatan",
+        question: "Dua suku berikutnya dari pola bilangan 3, 7, 11, 15, ..., ... adalah...",
+        options: ["19 dan 23", "18 dan 22", "19 dan 24", "20 dan 25"],
+        answer: 0
+      },
+      {
+        subject: "Matematika",
+        topic: "Pecahan, desimal, persen, dan perbandingan",
+        question: "Nilai dari 3/5 dari 45 adalah...",
+        options: ["27", "15", "30", "18"],
+        answer: 0
+      },
+      {
+        subject: "Matematika",
+        topic: "Pecahan, desimal, persen, dan perbandingan",
+        question: "Hasil penjumlahan bilangan desimal 12,45 + 3,8 adalah...",
+        options: ["16,25", "12,83", "15,25", "16,13"],
+        answer: 0
+      },
+      {
+        subject: "Matematika",
+        topic: "Pecahan, desimal, persen, dan perbandingan",
+        question: "Bentuk persen dari pecahan 3/4 adalah...",
+        options: ["75%", "34%", "60%", "80%"],
+        answer: 0
+      },
+      {
+        subject: "Matematika",
+        topic: "Pengukuran dan penerapan sehari-hari",
+        question: "Panjang sebuah pita adalah 3,5 meter. Jika diubah ke dalam satuan sentimeter (cm), panjangnya menjadi...",
+        options: ["350 cm", "35 cm", "3.500 cm", "0,35 cm"],
+        answer: 0
+      },
+      {
+        subject: "Matematika",
+        topic: "Pengukuran dan penerapan sehari-hari",
+        question: "Harga 4 buah buku tulis adalah Rp14.000,00. Harga 1 buah buku tulis yang sama adalah...",
+        options: ["Rp3.500,00", "Rp3.000,00", "Rp4.500,00", "Rp2.500,00"],
+        answer: 0
+      },
+      {
+        subject: "Matematika",
+        topic: "Pengukuran dan penerapan sehari-hari",
+        question: "Sebuah kegiatan belajar dimulai pukul 07.30 dan selesai pukul 10.15. Lama kegiatan tersebut adalah...",
+        options: ["2 jam 45 menit", "3 jam 15 menit", "2 jam 15 menit", "3 jam 45 menit"],
+        answer: 0
+      },
+      {
+        subject: "Matematika",
+        topic: "Geometri dan pengukuran bangun",
+        question: "Sebuah persegi panjang memiliki panjang 14 cm dan lebar 8 cm. Luas persegi panjang tersebut adalah...",
+        options: ["112 cm²", "44 cm²", "22 cm²", "96 cm²"],
+        answer: 0
+      },
+      {
+        subject: "Matematika",
+        topic: "Geometri dan pengukuran bangun",
+        question: "Jumlah seluruh rusuk pada sebuah bangun ruang kubus adalah...",
+        options: ["12 rusuk", "6 rusuk", "8 rusuk", "10 rusuk"],
+        answer: 0
+      },
+      {
+        subject: "Matematika",
+        topic: "Geometri dan pengukuran bangun",
+        question: "Sebuah kubus memiliki panjang rusuk 5 cm. Volume kubus tersebut adalah...",
+        options: ["125 cm³", "25 cm³", "75 cm³", "150 cm³"],
+        answer: 0
+      },
+      {
+        subject: "Matematika",
+        topic: "Pengolahan data sederhana",
+        question: "Nilai ulangan matematika Rina adalah 80, 90, 75, dan 95. Nilai rata-rata ulangan Rina adalah...",
+        options: ["85", "80", "87,5", "90"],
+        answer: 0
+      },
+
+      // -------------------- 4. PENDIDIKAN PANCASILA (16 Soal) --------------------
+      {
+        subject: "Pendidikan Pancasila",
+        topic: "Pancasila dan lambang sila",
+        question: "Lambang sila kedua Pancasila yang berbunyi 'Kemanusiaan yang adil dan beradab' adalah...",
+        options: ["Rantai emas", "Bintang", "Pohon beringin", "Padi dan kapas"],
+        answer: 0
+      },
+      {
+        subject: "Pendidikan Pancasila",
+        topic: "Pancasila dan lambang sila",
+        question: "Lambang sila kelima Pancasila ('Keadilan sosial bagi seluruh rakyat Indonesia') adalah...",
+        options: ["Padi dan kapas", "Kepala banteng", "Pohon beringin", "Rantai emas"],
+        answer: 0
+      },
+      {
+        subject: "Pendidikan Pancasila",
+        topic: "Pancasila dan lambang sila",
+        question: "Contoh perilaku di sekolah yang mencerminkan pengamalan sila ketiga Pancasila adalah...",
+        options: ["Mengikuti upacara bendera dengan khidmat dan menjaga kerukunan", "Berdoa sebelum memulai pelajaran di kelas", "Melakukan musyawarah pemilihan ketua kelas", "Berbagi bekal makanan dengan teman yang membutuhkan"],
+        answer: 0
+      },
+      {
+        subject: "Pendidikan Pancasila",
+        topic: "Persatuan, keberagaman, dan gotong royong",
+        question: "Semboyan bangsa Indonesia yang tertulis pada pita yang dicengkeram burung Garuda adalah...",
+        options: ["Bhinneka Tunggal Ika", "Tut Wuri Handayani", "Ing Ngarsa Sung Tuladha", "Bersatu Kita Teguh"],
+        answer: 0
+      },
+      {
+        subject: "Pendidikan Pancasila",
+        topic: "Persatuan, keberagaman, dan gotong royong",
+        question: "Sikap yang tepat ketika teman yang berbeda agama sedang menjalankan ibadahnya adalah...",
+        options: ["Menghormati dan tidak membuat kegaduhan", "Mengajaknya bermain saat ia beribadah", "Memaksanya mengikuti cara ibadah kita", "Menjauhinya karena berbeda keyakinan"],
+        answer: 0
+      },
+      {
+        subject: "Pendidikan Pancasila",
+        topic: "Persatuan, keberagaman, dan gotong royong",
+        question: "Kegiatan membersihkan lingkungan sekolah secara bersama-sama agar pekerjaan cepat selesai merupakan wujud dari...",
+        options: ["Gotong royong", "Persaingan sehat", "Individualisme", "Unjuk rasa"],
+        answer: 0
+      },
+      {
+        subject: "Pendidikan Pancasila",
+        topic: "Aturan, norma, hak, kewajiban, dan musyawarah",
+        question: "Norma dalam masyarakat yang bersumber dari suara hati nurani manusia untuk membedakan baik dan buruk adalah...",
+        options: ["Norma kesusilaan", "Norma hukum", "Norma kesopanan", "Norma agama"],
+        answer: 0
+      },
+      {
+        subject: "Pendidikan Pancasila",
+        topic: "Aturan, norma, hak, kewajiban, dan musyawarah",
+        question: "Berikut ini yang merupakan contoh kewajiban siswa di lingkungan sekolah adalah...",
+        options: ["Mematuhi tata tertib sekolah dan menghormati guru", "Mendapatkan nilai hasil belajar dari guru", "Menggunakan fasilitas perpustakaan sekolah", "Mendapatkan perlindungan selama di sekolah"],
+        answer: 0
+      },
+      {
+        subject: "Pendidikan Pancasila",
+        topic: "Aturan, norma, hak, kewajiban, dan musyawarah",
+        question: "Apabila dalam musyawarah kelas keputusan diambil berdasarkan suara terbanyak (voting), sikap kita sebaiknya...",
+        options: ["Menerima dan melaksanakan keputusan dengan lapang dada", "Menolak hasil keputusan karena tidak sesuai pendapat kita", "Meninggalkan ruang kelas saat keputusan dijalankan", "Meminta musyawarah diulang terus sampai kita menang"],
+        answer: 0
+      },
+      {
+        subject: "Pendidikan Pancasila",
+        topic: "Konstitusi dan identitas negara",
+        question: "Hukum dasar tertulis (konstitusi) yang menjadi sumber hukum tertinggi di Indonesia adalah...",
+        options: ["UUD Negara Republik Indonesia Tahun 1945", "Ketetapan MPR", "Peraturan Pemerintah", "Undang-Undang Dasar Sementara"],
+        answer: 0
+      },
+      {
+        subject: "Pendidikan Pancasila",
+        topic: "Konstitusi dan identitas negara",
+        question: "Pembukaan Undang-Undang Dasar Negara Republik Indonesia Tahun 1945 terdiri atas...",
+        options: ["4 alinea", "3 alinea", "5 alinea", "6 alinea"],
+        answer: 0
+      },
+      {
+        subject: "Pendidikan Pancasila",
+        topic: "Konstitusi dan identitas negara",
+        question: "Bentuk negara Indonesia sesuai Pasal 1 Ayat (1) UUD Negara Republik Indonesia Tahun 1945 adalah...",
+        options: ["Negara Kesatuan Republik Indonesia (NKRI)", "Negara Serikat", "Negara Monarki", "Negara Federasi"],
+        answer: 0
+      },
+      {
+        subject: "Pendidikan Pancasila",
+        topic: "Konstitusi dan identitas negara",
+        question: "Lagu kebangsaan Negara Kesatuan Republik Indonesia yang diciptakan oleh W.R. Supratman adalah...",
+        options: ["Indonesia Raya", "Garuda Pancasila", "Bagimu Negeri", "Tanah Airku"],
+        answer: 0
+      },
+      {
+        subject: "Pendidikan Pancasila",
+        topic: "Sejarah kemerdekaan",
+        question: "Tokoh yang membacakan teks Proklamasi Kemerdekaan Indonesia pada tanggal 17 Agustus 1945 adalah...",
+        options: ["Ir. Soekarno", "Drs. Moh. Hatta", "Achmad Soebardjo", "Sayuti Melik"],
+        answer: 0
+      },
+      {
+        subject: "Pendidikan Pancasila",
+        topic: "Sejarah kemerdekaan",
+        question: "Badan yang dibentuk untuk menyelidiki berbagai hal penting dalam rangka mempersiapkan kemerdekaan Indonesia adalah...",
+        options: ["BPUPKI", "PBB", "ASEAN", "KAA"],
+        answer: 0
+      },
+      {
+        subject: "Pendidikan Pancasila",
+        topic: "Pancasila dan lambang sila",
+        question: "Bunyi sila pertama Pancasila yang menjadi dasar ketuhanan bangsa Indonesia adalah...",
+        options: ["Ketuhanan Yang Maha Esa", "Kemanusiaan yang adil dan beradab", "Persatuan Indonesia", "Keadilan sosial bagi seluruh rakyat Indonesia"],
+        answer: 0
+      },
+
+      // -------------------- 5. PENDIDIKAN AGAMA ISLAM (PAI) (16 Soal) --------------------
+      {
+        subject: "PAI",
+        topic: "Akidah dan Asmaul Husna",
+        question: "Rukun Iman dalam ajaran agama Islam berjumlah...",
+        options: ["6 perkara", "5 perkara", "4 perkara", "7 perkara"],
+        answer: 0
+      },
+      {
+        subject: "PAI",
+        topic: "Akidah dan Asmaul Husna",
+        question: "Asmaul Husna 'Ar-Rahman' memiliki arti bahwa Allah Maha...",
+        options: ["Pengasih", "Penyayang", "Merajai", "Mengetahui"],
+        answer: 0
+      },
+      {
+        subject: "PAI",
+        topic: "Akidah dan Asmaul Husna",
+        question: "Sifat amanah yang dimiliki oleh para rasul dan wajib diteladani umat Islam artinya...",
+        options: ["Dapat dipercaya", "Benar / jujur", "Menyampaikan", "Cerdas"],
+        answer: 0
+      },
+      {
+        subject: "PAI",
+        topic: "Akidah dan Asmaul Husna",
+        question: "Meyakini bahwa alam semesta beserta seluruh isinya kelak akan hancur dan manusia akan dibangkitkan disebut iman kepada...",
+        options: ["Hari akhir (kiamat)", "Qada dan qadar", "Kitab-kitab Allah", "Malaikat Allah"],
+        answer: 0
+      },
+      {
+        subject: "PAI",
+        topic: "Al-Qur'an dan tajwid",
+        question: "Surah pertama yang menjadi pembuka (Ummul Qur'an) dalam kitab suci Al-Qur'an adalah...",
+        options: ["Surah Al-Fatihah", "Surah Al-Ikhlas", "Surah Al-Baqarah", "Surah An-Nas"],
+        answer: 0
+      },
+      {
+        subject: "PAI",
+        topic: "Al-Qur'an dan tajwid",
+        question: "Pokok kandungan utama dari Surah Al-Ikhlas adalah menegaskan tentang...",
+        options: ["Keesaan Allah Swt. (Tauhid)", "Perintah menunaikan ibadah haji", "Kisah Nabi Musa dan Fir'aun", "Tata cara pembagian harta waris"],
+        answer: 0
+      },
+      {
+        subject: "PAI",
+        topic: "Al-Qur'an dan tajwid",
+        question: "Ilmu yang mempelajari tata cara melafalkan huruf-huruf dan hukum bacaan Al-Qur'an dengan baik dan benar disebut...",
+        options: ["Ilmu Tajwid", "Ilmu Fikih", "Ilmu Tauhid", "Ilmu Tarikh"],
+        answer: 0
+      },
+      {
+        subject: "PAI",
+        topic: "Ibadah dan fikih",
+        question: "Rukun Islam yang wajib dilaksanakan oleh setiap muslim berjumlah...",
+        options: ["5 perkara", "6 perkara", "4 perkara", "3 perkara"],
+        answer: 0
+      },
+      {
+        subject: "PAI",
+        topic: "Ibadah dan fikih",
+        question: "Bersuci menggunakan debu atau tanah yang suci sebagai pengganti wudu karena tidak ada air atau sakit disebut...",
+        options: ["Tayamum", "Istinja", "Mandi wajib", "Wudu"],
+        answer: 0
+      },
+      {
+        subject: "PAI",
+        topic: "Ibadah dan fikih",
+        question: "Waktu paling utama menunaikan zakat fitrah adalah pada bulan Ramadan hingga sebelum...",
+        options: ["Pelaksanaan salat Idulfitri", "Terbenam matahari awal Syawal", "Masuknya bulan Zulhijah", "Pelaksanaan salat Iduladha"],
+        answer: 0
+      },
+      {
+        subject: "PAI",
+        topic: "Ibadah dan fikih",
+        question: "Penyembelihan hewan kurban bagi umat Islam dilaksanakan pada hari raya Iduladha dan hari Tasyrik pada bulan...",
+        options: ["Zulhijah", "Ramadan", "Muharam", "Syawal"],
+        answer: 0
+      },
+      {
+        subject: "PAI",
+        topic: "Ibadah dan fikih",
+        question: "Salat wajib yang dikerjakan sebanyak 3 rakaat sesaat setelah matahari terbenam adalah salat...",
+        options: ["Magrib", "Isya", "Asar", "Subuh"],
+        answer: 0
+      },
+      {
+        subject: "PAI",
+        topic: "Nabi, rasul, malaikat, dan sejarah Islam",
+        question: "Nabi dan rasul yang menerima mukjizat berupa Kitab Suci Taurat dari Allah Swt. adalah...",
+        options: ["Nabi Musa a.s.", "Nabi Dawud a.s.", "Nabi Isa a.s.", "Nabi Ibrahim a.s."],
+        answer: 0
+      },
+      {
+        subject: "PAI",
+        topic: "Nabi, rasul, malaikat, dan sejarah Islam",
+        question: "Malaikat yang bertugas menyampaikan wahyu dari Allah Swt. kepada para nabi dan rasul adalah...",
+        options: ["Malaikat Jibril", "Malaikat Mikail", "Malaikat Israfil", "Malaikat Izrail"],
+        answer: 0
+      },
+      {
+        subject: "PAI",
+        topic: "Nabi, rasul, malaikat, dan sejarah Islam",
+        question: "Sahabat Nabi Muhammad saw. yang terpilih menjadi khalifah pertama (Khulafaur Rasyidin) setelah wafatnya Rasulullah adalah...",
+        options: ["Abu Bakar Ash-Shiddiq", "Umar bin Khattab", "Utsman bin Affan", "Ali bin Abi Thalib"],
+        answer: 0
+      },
+      {
+        subject: "PAI",
+        topic: "Nabi, rasul, malaikat, dan sejarah Islam",
+        question: "Gelar 'Al-Amin' yang diberikan masyarakat Mekah kepada Nabi Muhammad saw. memiliki arti...",
+        options: ["Orang yang dapat dipercaya", "Orang yang paling dermawan", "Pemimpin yang pemberani", "Utusan yang penyabar"],
+        answer: 0
+      }
+    ];
+
+    // =========================================================================
+    // KONFIGURASI & STATE DUEL 2 PEMAIN (50 SOAL CAMPURAN ACAK)
+    // =========================================================================
+    const TOTAL_QUESTIONS = 50;
+    const QUESTIONS_PER_SUBJECT = 10;
+    const TIME_PER_QUESTION = 20;
+
+    let currentQuestions = [];
+    let currentIndex = 0;
+    let timerInterval = null;
+    let timeLeft = TIME_PER_QUESTION;
+    let roundFinished = false;
+
+    let players = {
+      1: { name: "Pemain 1", score: 0, correct: 0, locked: false, subjectStats: {}, topicStats: {} },
+      2: { name: "Pemain 2", score: 0, correct: 0, locked: false, subjectStats: {}, topicStats: {} }
+    };
+
+    let subjectTotals = {};
+
+    // =========================================================================
+    // PENGACAKAN SOAL & PILIHAN JAWABAN
+    // =========================================================================
+    function shuffleArray(array) {
+      const copy = [...array];
+      for (let i = copy.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+      }
+      return copy;
+    }
+
+    function buildRandomQuizSet() {
+      const subjects = ["IPAS", "Bahasa Indonesia", "Matematika", "Pendidikan Pancasila", "PAI"];
+      let selected = [];
+
+      // Ambil 10 soal acak dari masing-masing 5 mata pelajaran (Total 50 soal)
+      subjects.forEach(subj => {
+        const pool = shuffleArray(QUESTION_BANK.filter(q => q.subject === subj));
+        selected.push(...pool.slice(0, QUESTIONS_PER_SUBJECT));
+      });
+
+      // Acak urutan 50 soal campuran
+      selected = shuffleArray(selected);
+
+      // Acak opsi jawaban A, B, C, D tiap soal
+      return selected.map(q => {
+        const mappedOptions = q.options.map((optText, idx) => ({
+          text: optText,
+          isCorrect: idx === q.answer
+        }));
+        return {
+          ...q,
+          shuffledOptions: shuffleArray(mappedOptions)
+        };
+      });
+    }
+
+    function createEmptySubjectStats() {
+      return {
+        "IPAS": { correct: 0, score: 0 },
+        "Bahasa Indonesia": { correct: 0, score: 0 },
+        "Matematika": { correct: 0, score: 0 },
+        "Pendidikan Pancasila": { correct: 0, score: 0 },
+        "PAI": { correct: 0, score: 0 }
+      };
+    }
+
+    // =========================================================================
+    // KONTROL ALUR DUEL
+    // =========================================================================
+    function startGame() {
+      const p1Input = document.getElementById("p1-name").value.trim();
+      const p2Input = document.getElementById("p2-name").value.trim();
+
+      players[1] = {
+        name: p1Input || "Pemain 1",
+        score: 0,
+        correct: 0,
+        locked: false,
+        subjectStats: createEmptySubjectStats(),
+        topicStats: {}
+      };
+
+      players[2] = {
+        name: p2Input || "Pemain 2",
+        score: 0,
+        correct: 0,
+        locked: false,
+        subjectStats: createEmptySubjectStats(),
+        topicStats: {}
+      };
+
+      subjectTotals = {
+        "IPAS": 0,
+        "Bahasa Indonesia": 0,
+        "Matematika": 0,
+        "Pendidikan Pancasila": 0,
+        "PAI": 0
+      };
+
+      currentQuestions = buildRandomQuizSet();
+      currentIndex = 0;
+
+      document.getElementById("hud-p1-name").textContent = players[1].name;
+      document.getElementById("hud-p2-name").textContent = players[2].name;
+      document.getElementById("pad-p1-title").textContent = `🔵 ${players[1].name.toUpperCase()}`;
+      document.getElementById("pad-p2-title").textContent = `🔴 ${players[2].name.toUpperCase()}`;
+      updateScoreHUD();
+
+      document.getElementById("screen-start").classList.add("hidden");
+      document.getElementById("screen-result").classList.add("hidden");
+      document.getElementById("screen-game").classList.remove("hidden");
+
+      loadQuestion();
+    }
+
+    function updateScoreHUD() {
+      document.getElementById("hud-p1-score").textContent = players[1].score;
+      document.getElementById("hud-p2-score").textContent = players[2].score;
+    }
+
+    function loadQuestion() {
+      roundFinished = false;
+      players[1].locked = false;
+      players[2].locked = false;
+      clearInterval(timerInterval);
+
+      const q = currentQuestions[currentIndex];
+      subjectTotals[q.subject] += 1;
+
+      // Daftarkan bidang materi ke statistik kedua pemain agar evaluasi penguasaan menyeluruh
+      const topicKey = `${q.subject} — ${q.topic}`;
+      [1, 2].forEach(pNum => {
+        if (!players[pNum].topicStats[topicKey]) {
+          players[pNum].topicStats[topicKey] = { subject: q.subject, topic: q.topic, correct: 0, total: 0 };
+        }
+        players[pNum].topicStats[topicKey].total += 1;
+      });
+
+      document.getElementById("question-counter").textContent = `Soal ${currentIndex + 1} / ${TOTAL_QUESTIONS}`;
+      document.getElementById("subject-badge").textContent = q.subject;
+      document.getElementById("topic-label").textContent = `Bidang Materi: ${q.topic}`;
+      document.getElementById("question-text").textContent = q.question;
+      document.getElementById("feedback-banner").classList.add("hidden");
+
+      // Render Tampilan Pilihan A, B, C, D di Area Tengah
+      const sharedOptions = document.getElementById("shared-options-display");
+      sharedOptions.innerHTML = "";
+      const letters = ["A", "B", "C", "D"];
+
+      q.shuffledOptions.forEach((opt, idx) => {
+        const div = document.createElement("div");
+        div.id = `shared-opt-${idx}`;
+        div.className = "flex items-center gap-3 p-3 rounded-xl bg-white border border-slate-200 transition";
+        div.innerHTML = `
+          <span class="w-8 h-8 rounded-lg bg-slate-100 text-slate-800 font-extrabold text-sm flex items-center justify-center shrink-0">
+            ${letters[idx]}
+          </span>
+          <span class="font-semibold text-slate-800 text-xs sm:text-sm">${opt.text}</span>
+        `;
+        sharedOptions.appendChild(div);
+      });
+
+      // Reset & Render Tombol Rebutan Pemain 1 dan Pemain 2
+      renderPlayerPad(1, ["1", "2", "3", "4"]);
+      renderPlayerPad(2, ["7", "8", "9", "0"]);
+
+      // Mulai Timer
+      timeLeft = TIME_PER_QUESTION;
+      updateTimerUI();
+
+      timerInterval = setInterval(() => {
+        timeLeft--;
+        updateTimerUI();
+        if (timeLeft <= 0) {
+          clearInterval(timerInterval);
+          handleTimeout();
+        }
+      }, 1000);
+    }
+
+    function renderPlayerPad(playerNum, keyHints) {
+      const pad = document.getElementById(`p${playerNum}-pad`);
+      const badge = document.getElementById(`p${playerNum}-status-badge`);
+      const btnContainer = document.getElementById(`p${playerNum}-buttons`);
+      const letters = ["A", "B", "C", "D"];
+
+      pad.classList.remove("opacity-50");
+      badge.textContent = `Siap Rebutan (${keyHints[0]}-${keyHints[3]})`;
+      badge.className = playerNum === 1
+        ? "text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-blue-100 text-blue-800"
+        : "text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-rose-100 text-rose-800";
+
+      btnContainer.innerHTML = "";
+      letters.forEach((letter, idx) => {
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.id = `p${playerNum}-btn-${idx}`;
+        btn.className = playerNum === 1
+          ? "py-3.5 sm:py-4 rounded-xl bg-blue-600 hover:bg-blue-700 active:scale-95 text-white font-black text-base sm:text-lg shadow-md transition cursor-pointer flex flex-col items-center justify-center"
+          : "py-3.5 sm:py-4 rounded-xl bg-rose-600 hover:bg-rose-700 active:scale-95 text-white font-black text-base sm:text-lg shadow-md transition cursor-pointer flex flex-col items-center justify-center";
+
+        btn.innerHTML = `
+          <span>${letter}</span>
+          <span class="text-[10px] font-semibold opacity-75">[${keyHints[idx]}]</span>
+        `;
+        btn.onclick = () => handlePlayerBuzz(playerNum, idx);
+        btnContainer.appendChild(btn);
+      });
+    }
+
+    function updateTimerUI() {
+      const timerText = document.getElementById("timer-text");
+      const timerBar = document.getElementById("timer-bar");
+      const pct = Math.max(0, (timeLeft / TIME_PER_QUESTION) * 100);
+
+      timerText.textContent = `${timeLeft}d`;
+      timerBar.style.width = `${pct}%`;
+
+      if (timeLeft <= 5) {
+        timerText.className = "font-black text-base sm:text-xl text-rose-400 tabular-nums animate-pulse";
+        timerBar.className = "h-full bg-rose-500 transition-all duration-1000 ease-linear";
+      } else if (timeLeft <= 10) {
+        timerText.className = "font-black text-base sm:text-xl text-amber-400 tabular-nums";
+        timerBar.className = "h-full bg-amber-400 transition-all duration-1000 ease-linear";
+      } else {
+        timerText.className = "font-black text-base sm:text-xl text-emerald-400 tabular-nums";
+        timerBar.className = "h-full bg-emerald-500 transition-all duration-1000 ease-linear";
+      }
+    }
+
+    // Dukungan Keyboard untuk Duel Cepat (P1: 1-4, P2: 7-0, Spasi/Enter: Lanjut)
+    document.addEventListener("keydown", (e) => {
+      if (document.getElementById("screen-game").classList.contains("hidden")) return;
+
+      if (roundFinished) {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          nextQuestion();
+        }
+        return;
+      }
+
+      const p1Keys = ["1", "2", "3", "4"];
+      const p2Keys = ["7", "8", "9", "0"];
+
+      if (p1Keys.includes(e.key)) {
+        handlePlayerBuzz(1, p1Keys.indexOf(e.key));
+      } else if (p2Keys.includes(e.key)) {
+        handlePlayerBuzz(2, p2Keys.indexOf(e.key));
+      }
+    });
+
+    function handlePlayerBuzz(playerNum, optionIndex) {
+      if (roundFinished || players[playerNum].locked) return;
+
+      const q = currentQuestions[currentIndex];
+      const isCorrect = q.shuffledOptions[optionIndex].isCorrect;
+      const opponentNum = playerNum === 1 ? 2 : 1;
+
+      if (isCorrect) {
+        // Pemain berhasil merebut jawaban yang benar!
+        roundFinished = true;
+        clearInterval(timerInterval);
+        disableAllPads();
+        highlightCorrectOption(q);
+
+        const speedBonus = Math.round((timeLeft / TIME_PER_QUESTION) * 50);
+        const earned = 100 + speedBonus;
+
+        players[playerNum].score += earned;
+        players[playerNum].correct += 1;
+        players[playerNum].subjectStats[q.subject].correct += 1;
+        players[playerNum].subjectStats[q.subject].score += earned;
+
+        const topicKey = `${q.subject} — ${q.topic}`;
+        players[playerNum].topicStats[topicKey].correct += 1;
+
+        updateScoreHUD();
+
+        const badge = document.getElementById(`p${playerNum}-status-badge`);
+        badge.textContent = `🏆 BENAR! (+${earned})`;
+        badge.className = "text-[11px] font-extrabold px-2.5 py-0.5 rounded-full bg-emerald-500 text-white";
+
+        showRoundBanner(
+          "⚡",
+          `${players[playerNum].name} Berhasil Merebut Jawaban!`,
+          `Jawaban tepat (+${earned} Poin: 100 Dasar + ${speedBonus} Bonus Cepat)`,
+          playerNum === 1
+            ? "mt-5 p-4 rounded-2xl border border-blue-200 bg-blue-50 text-blue-950 flex flex-col sm:flex-row sm:items-center justify-between gap-3"
+            : "mt-5 p-4 rounded-2xl border border-rose-200 bg-rose-50 text-rose-950 flex flex-col sm:flex-row sm:items-center justify-between gap-3"
+        );
+      } else {
+        // Pemain salah menekan -> Pengurangan 25 poin & kesempatan dilempar ke lawan
+        players[playerNum].locked = true;
+        players[playerNum].score -= 25;
+        players[playerNum].subjectStats[q.subject].score -= 25;
+        updateScoreHUD();
+
+        const pad = document.getElementById(`p${playerNum}-pad`);
+        const badge = document.getElementById(`p${playerNum}-status-badge`);
+        pad.classList.add("opacity-50");
+        badge.textContent = "❌ Salah (-25 Poin • Terkunci)";
+        badge.className = "text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-slate-700 text-white";
+
+        for (let i = 0; i < 4; i++) {
+          const btn = document.getElementById(`p${playerNum}-btn-${i}`);
+          if (btn) btn.disabled = true;
+        }
+
+        // Jika lawan belum terkunci, lempar kesempatan ke lawan
+        if (!players[opponentNum].locked) {
+          const oppBadge = document.getElementById(`p${opponentNum}-status-badge`);
+          oppBadge.textContent = "🔥 KESEMPATAN LEMPARAN!";
+          oppBadge.className = "text-[11px] font-extrabold px-2.5 py-0.5 rounded-full bg-amber-400 text-slate-950 animate-pulse";
+        } else {
+          // Kedua pemain sama-sama salah menjawab
+          roundFinished = true;
+          clearInterval(timerInterval);
+          highlightCorrectOption(q);
+          const correctOpt = q.shuffledOptions.find(o => o.isCorrect);
+
+          showRoundBanner(
+            "💥",
+            "Kedua Pemain Salah Menjawab!",
+            `Jawaban yang benar adalah: ${correctOpt.text}`,
+            "mt-5 p-4 rounded-2xl border border-slate-300 bg-slate-100 text-slate-900 flex flex-col sm:flex-row sm:items-center justify-between gap-3"
+          );
+        }
+      }
+    }
+
+    function handleTimeout() {
+      if (roundFinished) return;
+      roundFinished = true;
+      disableAllPads();
+
+      const q = currentQuestions[currentIndex];
+      highlightCorrectOption(q);
+      const correctOpt = q.shuffledOptions.find(o => o.isCorrect);
+
+      showRoundBanner(
+        "⌛",
+        "Waktu Habis! Tidak Ada yang Merebut Soal.",
+        `Jawaban yang benar adalah: ${correctOpt.text}`,
+        "mt-5 p-4 rounded-2xl border border-amber-200 bg-amber-50 text-amber-950 flex flex-col sm:flex-row sm:items-center justify-between gap-3"
+      );
+    }
+
+    function disableAllPads() {
+      [1, 2].forEach(pNum => {
+        for (let i = 0; i < 4; i++) {
+          const btn = document.getElementById(`p${pNum}-btn-${i}`);
+          if (btn) btn.disabled = true;
+        }
+      });
+    }
+
+    function highlightCorrectOption(q) {
+      q.shuffledOptions.forEach((opt, idx) => {
+        const el = document.getElementById(`shared-opt-${idx}`);
+        if (!el) return;
+        if (opt.isCorrect) {
+          el.className = "flex items-center gap-3 p-3 rounded-xl bg-emerald-50 border-2 border-emerald-500 transition";
+          el.querySelector("span:first-child").className = "w-8 h-8 rounded-lg bg-emerald-600 text-white font-extrabold text-sm flex items-center justify-center shrink-0";
+        } else {
+          el.classList.add("opacity-55");
+        }
+      });
+    }
+
+    function showRoundBanner(icon, title, desc, bannerClass) {
+      const banner = document.getElementById("feedback-banner");
+      banner.className = bannerClass;
+      document.getElementById("feedback-icon").textContent = icon;
+      document.getElementById("feedback-title").textContent = title;
+      document.getElementById("feedback-desc").textContent = desc;
+      banner.classList.remove("hidden");
+    }
+
+    function nextQuestion() {
+      currentIndex++;
+      if (currentIndex < TOTAL_QUESTIONS) {
+        loadQuestion();
+      } else {
+        showResults();
+      }
+    }
+
+    // =========================================================================
+    // LAPORAN AKHIR DUEL & ANALISIS MATERI PER PEMAIN
+    // =========================================================================
+    function showResults() {
+      clearInterval(timerInterval);
+      document.getElementById("screen-game").classList.add("hidden");
+      document.getElementById("screen-result").classList.remove("hidden");
+
+      const p1 = players[1];
+      const p2 = players[2];
+
+      document.getElementById("res-p1-name").textContent = p1.name;
+      document.getElementById("res-p1-score").textContent = p1.score.toLocaleString("id-ID");
+      document.getElementById("res-p1-correct").textContent = `${p1.correct} dari ${TOTAL_QUESTIONS} Soal Direbut Benar`;
+
+      document.getElementById("res-p2-name").textContent = p2.name;
+      document.getElementById("res-p2-score").textContent = p2.score.toLocaleString("id-ID");
+      document.getElementById("res-p2-correct").textContent = `${p2.correct} dari ${TOTAL_QUESTIONS} Soal Direbut Benar`;
+
+      const winnerHeadline = document.getElementById("winner-headline");
+      const winnerSubtext = document.getElementById("winner-subtext");
+
+      if (p1.score > p2.score) {
+        winnerHeadline.textContent = `🏆 ${p1.name} Menang Duel!`;
+        winnerSubtext.textContent = `Unggul ${p1.score - p2.score} poin atas ${p2.name} dari total 50 soal campuran LCT.`;
+      } else if (p2.score > p1.score) {
+        winnerHeadline.textContent = `🏆 ${p2.name} Menang Duel!`;
+        winnerSubtext.textContent = `Unggul ${p2.score - p1.score} poin atas ${p1.name} dari total 50 soal campuran LCT.`;
+      } else {
+        winnerHeadline.textContent = "🤝 Hasil Seri (Imbang)!";
+        winnerSubtext.textContent = `Kedua peserta mengumpulkan skor identik (${p1.score} poin)!`;
+      }
+
+      // Render Perbandingan Per Mata Pelajaran
+      const breakdownList = document.getElementById("subject-breakdown-list");
+      breakdownList.innerHTML = "";
+
+      Object.keys(subjectTotals).forEach(subj => {
+        const totalMapel = subjectTotals[subj];
+        const s1 = p1.subjectStats[subj];
+        const s2 = p2.subjectStats[subj];
+
+        const item = document.createElement("div");
+        item.className = "bg-slate-50 border border-slate-200/80 rounded-2xl p-4";
+        item.innerHTML = `
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+            <span class="font-extrabold text-slate-800 text-sm sm:text-base">${subj} (${totalMapel} Soal)</span>
+            <div class="flex items-center gap-3 text-xs sm:text-sm font-bold">
+              <span class="text-blue-700">🔵 ${p1.name}: ${s1.correct} Benar (${s1.score} pts)</span>
+              <span class="text-slate-300">|</span>
+              <span class="text-rose-700">🔴 ${p2.name}: ${s2.correct} Benar (${s2.score} pts)</span>
+            </div>
+          </div>
+          <div class="w-full h-3 bg-slate-200 rounded-full overflow-hidden flex">
+            <div class="h-full bg-blue-500 transition-all duration-700" style="width: ${(s1.correct / totalMapel) * 100}%"></div>
+            <div class="h-full bg-rose-500 transition-all duration-700" style="width: ${(s2.correct / totalMapel) * 100}%"></div>
+          </div>
+        `;
+        breakdownList.appendChild(item);
+      });
+
+      document.getElementById("tab-btn-p1").textContent = `🔵 Rapor ${p1.name}`;
+      document.getElementById("tab-btn-p2").textContent = `🔴 Rapor ${p2.name}`;
+      switchDiagnosticTab(1);
+    }
+
+    function switchDiagnosticTab(playerNum) {
+      const btn1 = document.getElementById("tab-btn-p1");
+      const btn2 = document.getElementById("tab-btn-p2");
+
+      if (playerNum === 1) {
+        btn1.className = "px-3.5 py-1.5 rounded-lg text-xs font-extrabold bg-blue-600 text-white transition cursor-pointer";
+        btn2.className = "px-3.5 py-1.5 rounded-lg text-xs font-extrabold text-slate-600 hover:text-slate-900 transition cursor-pointer";
+      } else {
+        btn2.className = "px-3.5 py-1.5 rounded-lg text-xs font-extrabold bg-rose-600 text-white transition cursor-pointer";
+        btn1.className = "px-3.5 py-1.5 rounded-lg text-xs font-extrabold text-slate-600 hover:text-slate-900 transition cursor-pointer";
+      }
+
+      const pData = players[playerNum];
+      const masteredTopics = [];
+      const unmasteredTopics = [];
+
+      Object.values(pData.topicStats).forEach(tStat => {
+        const pct = tStat.total > 0 ? Math.round((tStat.correct / tStat.total) * 100) : 0;
+        const label = `[${tStat.subject}] ${tStat.topic} (Direbut ${tStat.correct}/${tStat.total} • ${pct}%)`;
+        if (pct >= 50 && tStat.correct > 0) {
+          masteredTopics.push(label);
+        } else {
+          unmasteredTopics.push(label);
+        }
+      });
+
+      const masteredUl = document.getElementById("mastered-list");
+      const unmasteredUl = document.getElementById("unmastered-list");
+
+      masteredUl.innerHTML = masteredTopics.length > 0
+        ? masteredTopics.map(s => `<li><strong>${s}</strong></li>`).join("")
+        : `<li>Belum ada bidang materi yang berhasil direbut ≥ 50%.</li>`;
+
+      unmasteredUl.innerHTML = unmasteredTopics.length > 0
+        ? unmasteredTopics.map(s => `<li><strong>${s}</strong></li>`).join("")
+        : `<li>Semua bidang materi berhasil dikuasai!</li>`;
+    }
+
+    function resetToHome() {
+      clearInterval(timerInterval);
+      document.getElementById("screen-game").classList.add("hidden");
+      document.getElementById("screen-result").classList.add("hidden");
+      document.getElementById("screen-start").classList.remove("hidden");
+    }
+  </script>
+</body>
+</html>
